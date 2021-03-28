@@ -23,10 +23,12 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    '@nuxtjs/eslint-module',
-    {
-      fix: true,
-    },
+    [
+      '@nuxtjs/eslint-module',
+      {
+        fix: true,
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
