@@ -1,6 +1,6 @@
 # :car: SPOTZ CAR :car:
 
-Find your brand new car. https://spotzcar.vercel.app/
+Find your brand new car. https://spotz-car.vercel.app/
 
 ## Technologies
 
