@@ -1,0 +1,117 @@
+openapi: 3.0.0
+info:
+  title: SellMyCar
+  description: Api for cars to sell. (Spotz Test)
+  version: 0.1
+  
+paths:
+  /announcements:
+    get:
+      tags:
+        - Announcements
+      summary: Returns a list of cars.
+      parameters:
+      - name: minPrice
+        in: query
+        schema:
+          type: integer
+        description: The minimun price of a car
+      - name: maxPrice
+        in: query
+        schema:
+          type: integer
+        description: The maximun price of a car
+      - name: minKm
+        in: query
+        schema:
+          type: integer
+        description: The minimun km of a car
+      - name: maxKm
+        in: query
+        schema:
+          type: integer
+        description: The maximun price of a car
+      responses:
+        '200':
+          description: A JSON response containing a array of cars announcements.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cars:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CarAnnouncement'
+                  count:
+                    type: integer
+                    description: Result count
+                  properties:
+                    type: object
+                    properties:
+                      max_price:
+                        type: integer
+                        description: Max price available
+                      min_price:
+                        type: integer
+                        description: Min price available
+                      max_km:
+                        type: integer
+                        description: Max km available
+  /contacts:
+    post:
+      summary: Send a contact request
+      tags:
+        - Contact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                announcement_id:
+                  type: string
+                  required: true
+                contact:
+                  $ref: '#/components/schemas/Contact'
+                  
+          
+components:
+  schemas:
+    Contact:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name for contact
+        cpf:
+          type: string
+          description: CPF of the person to contact
+        email:
+          type: string
+          description: Email to contact
+        phone:
+          type: string
+          description: Phone to contact
+    CarAnnouncement:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique id of car announcement.
+        image:
+          type: string
+          description: Image url of the announcement
+        name:
+          type: string
+          description: Model name of the car
+        brand:
+          type: string
+          description: Brand name of the car
+        km:
+          type: integer
+          description: Kilometers driven from the car  
+        price:
+          type: integer
+          description: Price for the car
