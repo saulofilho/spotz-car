@@ -1,5 +1,5 @@
 <template>
-  <div class="buscar-wrapper container">
+  <div class="buscar-wrapper">
     <div class="title">
       <p>Buscar</p>
     </div>
@@ -10,12 +10,7 @@
     <p v-if="$fetchState.pending">Loading....</p>
     <p v-else-if="$fetchState.error">Error while fetching cars</p>
     <div v-else class="card-wrapper">
-      <div
-        v-for="(car, index) in cars.cars"
-        :key="index"
-        :load="log(cars)"
-        class="card"
-      >
+      <div v-for="(car, index) in cars.cars" :key="index" class="card">
         <p>
           {{ car.id }}
         </p>
@@ -51,11 +46,7 @@ export default {
       .then((res) => res.json())
       .catch((err) => err.message)
   },
-  methods: {
-    log(car) {
-      console.log('cars', car.cars)
-    },
-  },
+  methods: {},
 }
 </script>
 
@@ -68,13 +59,17 @@ export default {
   justify-content: center
   align-items: center
   flex-flow: column
+  padding: 50px 0
 
 .buscar-wrapper .card-wrapper
   display: flex
-  justify-content: center
+  justify-content: flex-start
   align-items: center
   flex-flow: wrap
   width: 100%
+  margin: 0 auto
+  max-width: 900px
+  padding: 20px 40px
 
 .buscar-wrapper .card
   display: flex

@@ -1,33 +1,102 @@
 <template>
   <footer>
-    <div class="footer-wrapper">
+    <div class="footer-wrapper container">
       <div class="logo-wrapper">
         <img src="../assets/images/logo.png" alt="logo of spotz car" />
-        logo footer
+        <p>
+          Copyright © 2021 Spotz
+          <br />
+          Todos os direitos reservados.
+        </p>
       </div>
-      <nav class="navbar-wrapper">
-        <ul>
-          <li>
-            <a href="#Inicio"> About </a>
-          </li>
-          <li>
-            <a href="#Buscar"> About </a>
-          </li>
-          <li>
-            <a href="#Sobre"> About </a>
-          </li>
-        </ul>
-      </nav>
+      <div class="infos-footer-wrapper">
+        <div class="col-wrapper">
+          <p class="col-title">Nossas Redes Sociais</p>
+          <a href="https://www.instagram.com/spotz.co/">
+            <img src="../assets/images/ig-icon.png" alt="logo of spotz car" />
+          </a>
+          <a href="https://www.facebook.com/spotz.co">
+            <img src="../assets/images/fb-icon.png" alt="logo of spotz car" />
+          </a>
+        </div>
+        <div class="col-wrapper">
+          <p class="col-title">Avisos Legais</p>
+          <a href="https://www.spotz.co/"> Termos de uso </a>
+          <a href="https://www.spotz.co/"> Política de Privacidade </a>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
 
 <style lang="sass">
+@use '/assets/scss/main'
+
 footer
   width: 100%
-  height: 100%
+  height: auto
+
+footer .footer-wrapper
+  height: auto
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  flex-flow: row
+
+footer .logo-wrapper
+  height: auto
+  width: 100%
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  flex-flow: column
 
 footer .logo-wrapper img
   height: 100%
-  width: 100px
+  width: 80px
+  padding-bottom: 10px
+
+footer .logo-wrapper p
+  font-size: 12px
+  color: main.$color-gray
+
+footer .infos-footer-wrapper
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  flex-flow: row
+  width: 100%
+  height: auto
+
+footer .col-wrapper
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  flex-flow: column
+  width: 100%
+  height: auto
+
+footer .col-wrapper a
+  font-size: 14px
+  color: main.$color-gray
+  padding-bottom: 10px
+
+footer .col-wrapper a:hover
+  color: main.$color-orange
+
+footer .col-title
+  font-weight: bolder
+  padding-bottom: 20px
+  height: auto
+  font-size: 18px
+  color: main.$color-gray
+
+@media (max-width: 768px)
+  footer .footer-wrapper
+    flex-flow: column
+  footer .infos-footer-wrapper
+    flex-flow: column
+  footer .col-wrapper
+    padding-top: 30px
 </style>
