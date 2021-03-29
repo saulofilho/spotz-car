@@ -6,9 +6,9 @@ Find your brand new car. https://spotz-car.vercel.app/
 
 This project was developed with the following technologies:
 
-- [NuxtJS](https://github.com/axios/axios)
-- [Typescript](https://github.com/axios/axios)
-- [Docker](https://github.com/axios/axios)
+- [NuxtJS](https://github.com/)
+- [Typescript](https://github.com/)
+- [Docker](https://github.com/)
 - [Formik](https://github.com/formium/formik)
 - [Yup](https://github.com/jquense/yup)
 - [Jest](https://github.com/facebook/jest)
