@@ -14,7 +14,7 @@ export default {
   css: ['@/assets/scss/main.sass'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/vue-slick-carousel.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -42,7 +42,7 @@ export default {
 
   styleResources: {
     sass: ['@/assets/scss/main.scss'],
-   },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

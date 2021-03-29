@@ -1,7 +1,17 @@
 <template>
-  <div id="Buscar">
-    <div class="buscar-wrapper">
-      <h1>buscar</h1>
+  <div class="buscar-wrapper">
+    <div class="title">
+      <p>Buscar</p>
+    </div>
+    <div class="filtros">
+      <p>Filtros:</p>
+      <input type="search" />
+    </div>
+    <div class="card">
+      <img src="" alt="" />
+      <p class="card-title">title</p>
+      <p class="card-subtitle">sub</p>
+      <button>Form</button>
     </div>
   </div>
 </template>
