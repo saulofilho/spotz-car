@@ -56,7 +56,7 @@
       Eros donec ac odio tempor orci. Adipiscing tristique risus nec feugiat.
       Pellentesque sit amet porttitor eget dolor morbi non arcu risus.
     </p>
-    <div class="person-wrapper">
+    <div class="person-wrapper container">
       <div class="item">
         <div class="img-wrapper">
           <img src="../assets/images/dog-boss1.jpg" alt="" />
@@ -109,26 +109,31 @@
 
 .sobre-wrapper .person-wrapper
   display: flex
-  justify-content: flex-start
+  justify-content: space-evenly
   align-items: center
   flex-flow: row
+  width: 100%
 
 .sobre-wrapper .item
   display: flex
   justify-content: center
   align-items: center
   flex-flow: column
+  text-align: center
 
 .sobre-wrapper .img-wrapper
   border-radius: 50%
-  width: 60px
-  height: 60px
+  width: 80px
+  height: 80px
 
 .sobre-wrapper .img-wrapper img
-  width: 100%
+  border-radius: 50%
+  width: 80px
+  height: 80px
+  object-fit: cover
+  border: 2px solid main.$color-lightGray
 
 .sobre-wrapper .text-sobre
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
   font-weight: normal
   font-size: 1rem
   color: main.$color-gray
@@ -137,4 +142,10 @@
   margin: 0 auto
   max-width: 900px
   padding: 0 40px
+
+@media (max-width: 768px)
+  .sobre-wrapper .person-wrapper
+    flex-flow: column
+  .sobre-wrapper .person-wrapper .item
+    padding-bottom: 20px
 </style>
