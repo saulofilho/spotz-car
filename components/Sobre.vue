@@ -70,17 +70,6 @@
       </div>
       <div class="item">
         <div class="img-wrapper">
-          <img src="../assets/images/dog-boss2.jpg" alt="" />
-        </div>
-        <div class="cargos-wrapper">
-          <p class="name">
-            <strong> The Other Dog </strong>
-          </p>
-          <p class="cargo">CEO</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="img-wrapper">
           <img src="../assets/images/cat-boss1.jpg" alt="" />
         </div>
         <div class="cargos-wrapper">
@@ -88,6 +77,17 @@
             <strong> The Cat </strong>
           </p>
           <p class="cargo">CCO</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="../assets/images/dog-boss2.jpg" alt="" />
+        </div>
+        <div class="cargos-wrapper">
+          <p class="name">
+            <strong> The Other Dog </strong>
+          </p>
+          <p class="cargo">CEO</p>
         </div>
       </div>
     </div>
@@ -120,6 +120,7 @@
   align-items: center
   flex-flow: column
   text-align: center
+  color: main.$color-gray
 
 .sobre-wrapper .img-wrapper
   border-radius: 50%

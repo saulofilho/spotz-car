@@ -79,17 +79,17 @@ footer .col-wrapper
 
 footer .col-wrapper a
   font-size: 14px
-  color: main.$color-gray
+  color: main.$color-orange
   padding-bottom: 10px
 
 footer .col-wrapper a:hover
-  color: main.$color-orange
+  color: main.$color-purple
 
 footer .col-title
   font-weight: bolder
   padding-bottom: 20px
   height: auto
-  font-size: 18px
+  font-size: 14px
   color: main.$color-gray
 
 @media (max-width: 768px)
