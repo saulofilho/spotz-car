@@ -9,7 +9,6 @@ This project was developed with the following technologies:
 - [NuxtJS](https://github.com/axios/axios)
 - [Typescript](https://github.com/axios/axios)
 - [Docker](https://github.com/axios/axios)
-- [Axios](https://github.com/axios/axios)
 - [Formik](https://github.com/formium/formik)
 - [Yup](https://github.com/jquense/yup)
 - [Jest](https://github.com/facebook/jest)

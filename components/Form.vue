@@ -7,7 +7,10 @@
 </template>
 
 <style lang="sass">
-.form-wrapper
+form
+  display: none
+
+form .form-wrapper
   margin: 0 auto
   height: 100vh
   width: 100%

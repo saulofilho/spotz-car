@@ -11,12 +11,10 @@
       <Carousel />
     </section>
     <section id="Buscar">
-      <h1>buscar wrapper</h1>
       <Buscar />
       <Form />
     </section>
     <section id="Sobre">
-      <h1>sober wrapper</h1>
       <Sobre />
     </section>
   </main>
