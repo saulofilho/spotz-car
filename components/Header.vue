@@ -17,12 +17,18 @@
           </li>
         </ul>
       </nav>
+      <div class="menu-wrapper">
+        <Menuburger />
+      </div>
     </div>
   </header>
 </template>
 
 <style lang="sass">
 @use '/assets/scss/main'
+
+.menu-wrapper
+  display: none
 
 header
   width: 100%
@@ -60,4 +66,10 @@ header .navbar-wrapper ul li a
 
 header .navbar-wrapper ul li a:hover
   color: main.$color-purple
+
+@media (max-width: 768px)
+  .menu-wrapper
+    display: block
+  .navbar-wrapper
+    display: none
 </style>

@@ -16,6 +16,13 @@
     <section id="Sobre">
       <Sobre />
     </section>
+    <Sidebar>
+      <ul class="sidebar-panel-nav">
+        <li><a href="#Carousel">Home</a></li>
+        <li><a href="#Buscar">Buscar</a></li>
+        <li><a href="#Sobre">Sobre</a></li>
+      </ul>
+    </Sidebar>
   </main>
 </template>
 
