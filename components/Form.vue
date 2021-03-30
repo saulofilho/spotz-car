@@ -135,5 +135,6 @@ form .erros-wrapper
   width: 100%
 
 form .erros-wrapper ul
-  padding-inline-start: unset
+  padding-inline-start: unset !important
+  padding-left: 0
 </style>

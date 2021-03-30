@@ -100,4 +100,8 @@ export default {
   background: main.$color-purple
   border-radius: 5px
   color: main.$color-gray
+
+@media (max-width: 768px)
+  .modal
+    height: 100%
 </style>

@@ -70,6 +70,12 @@ export default {
       cars: [],
       isModalVisible: false,
       selectedCar: '',
+      count: 0,
+      properties: {
+        max_price: 0,
+        min_price: 0,
+        max_km: 0,
+      },
     }
   },
   async fetch() {
