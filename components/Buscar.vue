@@ -71,6 +71,12 @@ export default {
       .then((res) => res.json())
       .catch((err) => err.message)
   },
+  // mounted() {
+  //   this.$notifier.showMessage({
+  //     content: 'YAY Our Plugin worked Successfully!',
+  //     color: 'success',
+  //   })
+  // },
   methods: {
     showModal() {
       this.isModalVisible = true

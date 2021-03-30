@@ -9,8 +9,6 @@ This project was developed with the following technologies:
 - [NuxtJS](https://nuxtjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Docker](https://www.docker.com/)
-- [Formik](https://github.com/formium/formik)
-- [Yup](https://github.com/jquense/yup)
 - [Jest](https://github.com/facebook/jest)
 - [Sass](https://sass-lang.com/)
 - [vue-slick-carousel](https://gs-shop.github.io/vue-slick-carousel/#/)
