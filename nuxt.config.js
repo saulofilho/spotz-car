@@ -14,7 +14,11 @@ export default {
   css: ['@/assets/scss/main.sass'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-slick-carousel.js', '~/plugins/notifier.js'],
+  plugins: [
+    '~/plugins/vue-slick-carousel.js',
+    '~/plugins/notifier.js',
+    '~/plugins/v-mask.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

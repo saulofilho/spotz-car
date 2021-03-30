@@ -1,7 +1,11 @@
 <template>
   <div class="buscar-wrapper">
     <div id="Modal">
-      <Modal v-show="isModalVisible" @close="closeModal" />
+      <Modal
+        v-show="isModalVisible"
+        :car-id="selectedCar"
+        @close="closeModal"
+      />
     </div>
     <div class="title">
       <p>Buscar</p>
@@ -11,9 +15,9 @@
       <input type="search" />
     </div>
     <p v-if="$fetchState.pending">Loading....</p>
-    <p v-else-if="$fetchState.error">Error while fetching cars</p>
+    <p v-else-if="$fetchState.error">Error while fetching cars.</p>
     <div v-else class="card-wrapper">
-      <div v-for="(car, index) in cars.cars" :key="index" class="card">
+      <div v-for="car in cars.cars" :key="car.id" class="card">
         <img :src="require(`@/assets/images/${car.image}`)" alt="" />
         <div class="infos-wrapper">
           <div class="infos-card-wrapper">
@@ -48,7 +52,9 @@
               {{ car.price }}
             </p>
           </div>
-          <button type="button" @click="showModal">Entrar em contato</button>
+          <button type="button" @click="showModal(car)">
+            Entrar em contato
+          </button>
         </div>
       </div>
     </div>
@@ -58,10 +64,12 @@
 <script>
 export default {
   name: 'App',
+  props: ['carId'],
   data() {
     return {
       cars: [],
       isModalVisible: false,
+      selectedCar: '',
     }
   },
   async fetch() {
@@ -78,8 +86,9 @@ export default {
   //   })
   // },
   methods: {
-    showModal() {
+    showModal(item) {
       this.isModalVisible = true
+      this.selectedCar = item
     },
     closeModal() {
       this.isModalVisible = false

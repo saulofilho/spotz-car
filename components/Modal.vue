@@ -7,7 +7,7 @@
       </header>
       <section class="modal-body">
         <slot name="body">
-          <Form />
+          <Form :car-id="carId" />
         </slot>
       </section>
       <footer class="modal-footer">
@@ -20,6 +20,7 @@
 <script>
 export default {
   name: 'Modal',
+  props: ['carId'],
   methods: {
     close() {
       this.$emit('close')
@@ -50,6 +51,9 @@ export default {
   display: flex
   flex-direction: column
   padding: 20px
+  margin: 10%
+  width: 100%
+  height: auto
 
 .modal-header
   padding: 20px
