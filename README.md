@@ -14,7 +14,6 @@ This project was developed with the following technologies:
 - [Jest](https://github.com/facebook/jest)
 - [Sass](https://sass-lang.com/)
 - [vue-slick-carousel](https://gs-shop.github.io/vue-slick-carousel/#/)
-- [vue-js-modal](https://github.com/euvl/vue-js-modal#readme)
 - [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
 [nodejs]: https://nodejs.org/

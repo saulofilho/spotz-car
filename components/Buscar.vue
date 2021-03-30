@@ -1,5 +1,10 @@
 <template>
   <div class="buscar-wrapper">
+    <div id="app">
+      <button type="button" class="btn" @click="showModal">Open Modal!</button>
+
+      <Modal v-show="isModalVisible" @close="closeModal" />
+    </div>
     <div class="title">
       <p>Buscar</p>
     </div>
@@ -54,9 +59,12 @@
 
 <script>
 export default {
+  name: 'App',
+
   data() {
     return {
       cars: [],
+      isModalVisible: false,
     }
   },
   async fetch() {
@@ -66,7 +74,14 @@ export default {
       .then((res) => res.json())
       .catch((err) => err.message)
   },
-  methods: {},
+  methods: {
+    showModal() {
+      this.isModalVisible = true
+    },
+    closeModal() {
+      this.isModalVisible = false
+    },
+  },
 }
 </script>
 
