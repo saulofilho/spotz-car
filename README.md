@@ -12,6 +12,7 @@ This project was developed with the following technologies:
 - [Jest](https://github.com/facebook/jest)
 - [Sass](https://sass-lang.com/)
 - [vue-slick-carousel](https://gs-shop.github.io/vue-slick-carousel/#/)
+- [v-mask](https://github.com/probil/v-mask#readme
 - [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
 [nodejs]: https://nodejs.org/
