@@ -6,12 +6,14 @@ Find your brand new car. https://spotz-car.vercel.app/
 
 This project was developed with the following technologies:
 
-- [NuxtJS](https://github.com/)
-- [Typescript](https://github.com/)
-- [Docker](https://github.com/)
+- [NuxtJS](https://nuxtjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Docker](https://www.docker.com/)
 - [Formik](https://github.com/formium/formik)
 - [Yup](https://github.com/jquense/yup)
 - [Jest](https://github.com/facebook/jest)
+- [Sass](https://sass-lang.com/)
+- [vue-slick-carousel](https://gs-shop.github.io/vue-slick-carousel/#/)
 - [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
 [nodejs]: https://nodejs.org/
