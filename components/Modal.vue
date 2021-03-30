@@ -2,19 +2,16 @@
   <div class="modal-backdrop">
     <div class="modal">
       <header class="modal-header">
-        <slot name="header"> This is the default title! </slot>
+        <slot name="header"> Formulário de contato</slot>
         <button type="button" class="btn-close" @click="close">x</button>
       </header>
-
       <section class="modal-body">
-        <slot name="body"> This is the default body! </slot>
+        <slot name="body">
+          <Form />
+        </slot>
       </section>
-
       <footer class="modal-footer">
-        <slot name="footer"> This is the default footer! </slot>
-        <button type="button" class="btn-green" @click="close">
-          Close Modal
-        </button>
+        <button type="button" @click="close">Cancelar</button>
       </footer>
     </div>
   </div>
@@ -32,43 +29,48 @@ export default {
 </script>
 
 <style lang="sass">
+@use '/assets/scss/main'
+
 .modal-backdrop
   position: fixed
   top: 0
   bottom: 0
   left: 0
   right: 0
-  background-color: rgba(0, 0, 0, 0.3)
+  background-color: rgba(0, 0, 0, 0.7)
   display: flex
   justify-content: center
   align-items: center
+  z-index: 999
 
 .modal
-  background: #FFFFFF
+  background: main.$color-white
   box-shadow: 2px 2px 20px 1px
   overflow-x: auto
   display: flex
   flex-direction: column
+  padding: 20px
 
-.modal-header,
+.modal-header
+  padding: 20px
+  display: flex
+
 .modal-footer
-  padding: 15px
+  padding: 0 20px 20px
   display: flex
 
 .modal-header
   position: relative
-  border-bottom: 1px solid #eeeeee
-  color: #4AAE9B
+  color: main.$color-gray
   justify-content: space-between
 
 .modal-footer
-  border-top: 1px solid #eeeeee
   flex-direction: column
   justify-content: flex-end
 
 .modal-body
   position: relative
-  padding: 20px 10px
+  padding: 20px
 
 .btn-close
   position: absolute
@@ -79,12 +81,19 @@ export default {
   padding: 10px
   cursor: pointer
   font-weight: bold
-  color: #4AAE9B
+  color: main.$color-gray
   background: transparent
 
-.btn-green
-  color: white
-  background: #4AAE9B
-  border: 1px solid #4AAE9B
-  border-radius: 2px
+.modal-footer button
+  width: 100%
+  background: main.$color-orange
+  border-radius: 5px
+  color: main.$color-white
+  padding: 10px 0
+
+.modal-footer button:hover
+  width: 100%
+  background: main.$color-purple
+  border-radius: 5px
+  color: main.$color-gray
 </style>

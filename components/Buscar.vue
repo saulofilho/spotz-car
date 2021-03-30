@@ -1,8 +1,6 @@
 <template>
   <div class="buscar-wrapper">
-    <div id="app">
-      <button type="button" class="btn" @click="showModal">Open Modal!</button>
-
+    <div id="Modal">
       <Modal v-show="isModalVisible" @close="closeModal" />
     </div>
     <div class="title">
@@ -50,7 +48,7 @@
               {{ car.price }}
             </p>
           </div>
-          <button type="button">Entrar em contato</button>
+          <button type="button" @click="showModal">Entrar em contato</button>
         </div>
       </div>
     </div>
@@ -60,7 +58,6 @@
 <script>
 export default {
   name: 'App',
-
   data() {
     return {
       cars: [],
@@ -140,7 +137,7 @@ export default {
 
 .buscar-wrapper .card button:hover
   width: 100%
-  background: red
+  background: main.$color-purple
   border-radius: 5px
   margin-top: 10px
   color: main.$color-gray

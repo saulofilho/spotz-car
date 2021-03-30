@@ -12,7 +12,6 @@
     </section>
     <section id="Buscar">
       <Buscar />
-      <Form />
     </section>
     <section id="Sobre">
       <Sobre />
