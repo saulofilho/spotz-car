@@ -3,7 +3,7 @@
     name="contact"
     action="https://us-central1-spotz-prod.cloudfunctions.net/function-sell-my-car/contacts"
     method="post"
-    @submit="checkForm"
+    @submit.prevent="checkForm"
   >
     <div v-if="errors.length" class="erros-wrapper">
       <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
@@ -14,10 +14,9 @@
     <label class="form-label" for="announcement_id"> Car ID: </label>
     <input
       id="announcement_id"
+      :value="announcement_id"
       class="form-field"
       name="announcement_id"
-      :value="`${carId.id}`"
-      disabled
     />
     <label class="form-label" for="name"> Nome: </label>
     <input id="name" v-model="contact.name" class="form-field" name="name" />
@@ -51,7 +50,6 @@ export default {
   data() {
     return {
       errors: [],
-      announcement_id: '',
       contact: {
         name: '',
         cpf: '',
@@ -60,19 +58,29 @@ export default {
       },
     }
   },
+  computed: {
+    announcement_id() {
+      return this.carId.id
+    },
+  },
   methods: {
     checkForm(e) {
       if (
+        this.announcement_id &&
         this.contact.name &&
         this.contact.cpf &&
         this.contact.email &&
         this.contact.phone
       ) {
+        this.$toast.success('Successfully sent.')
         return true
       }
 
       this.errors = []
 
+      if (!this.announcement_id) {
+        this.errors.push('O ID do carro é obrigatório.')
+      }
       if (!this.contact.name) {
         this.errors.push('O nome é obrigatório.')
       }
@@ -86,6 +94,7 @@ export default {
         this.errors.push('O telefone é obrigatório.')
       }
 
+      this.$toast.error('Something went wrong.')
       e.preventDefault()
     },
   },

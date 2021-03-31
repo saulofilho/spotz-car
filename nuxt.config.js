@@ -47,6 +47,7 @@ export default {
         toastObject.goAway(0)
       },
     },
+    duration: 3000,
   },
 
   styleResources: {
