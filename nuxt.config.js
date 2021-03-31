@@ -36,7 +36,18 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
+    '@nuxtjs/toast',
   ],
+
+  toast: {
+    position: 'top-center',
+    action: {
+      text: 'X',
+      onClick: (e, toastObject) => {
+        toastObject.goAway(0)
+      },
+    },
+  },
 
   styleResources: {
     sass: ['@/assets/scss/main.scss'],
