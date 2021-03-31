@@ -44,6 +44,7 @@ export default {
     action: {
       text: 'X',
       onClick: (e, toastObject) => {
+        console.log(e)
         toastObject.goAway(0)
       },
     },
