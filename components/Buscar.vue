@@ -10,47 +10,26 @@
     <div class="title">
       <p>Buscar</p>
     </div>
-    <div class="filtros container">
+    <div class="filtros">
       <p>Filtre o seu próximo carro:</p>
-      <label class="form-label" for="searchValue"> Carro: </label>
-      <input
-        id="searchValue"
-        v-model="searchValue"
-        type="text"
-        class="form-field"
-        name="searchValue"
-        placeholder="Ex.: Golf"
-      />
-      <select id="select" v-model="sortBy" name="sortBy">
-        <option value="max_price">max_price</option>
-        <option value="min_price">min_price</option>
-        <option value="max_km">max_km</option>
-      </select>
-      <button class="sort-button" @click="ascending = !ascending">
-        <i v-if="ascending" class="fa fa-sort-up">a</i>
-        <i v-else class="fa fa-sort-down">b</i>
-      </button>
-      <!-- <label class="form-label" for="max_price"> Preço Max: </label>
-      <input
-        id="max_price"
-        v-model="properties.max_price"
-        class="form-field"
-        name="max_price"
-      />
-      <label class="form-label" for="name"> Preço Min: </label>
-      <input
-        id="min_price"
-        v-model="properties.min_price"
-        class="form-field"
-        name="min_price"
-      />
-      <label class="form-label" for="max_km"> Max Km: </label>
-      <input
-        id="max_km"
-        v-model="properties.max_km"
-        class="form-field"
-        name="max_km"
-      /> -->
+      <div class="filtros-wrapper">
+        <input
+          id="searchValue"
+          v-model="searchValue"
+          type="text"
+          class="form-field"
+          name="searchValue"
+          placeholder="Ex.: Golf"
+        />
+        <select id="select" v-model="sortBy" name="sortBy">
+          <option value="max_price">Preço</option>
+          <option value="max_km">Km</option>
+        </select>
+        <button class="sort-button" @click="ascending = !ascending">
+          <i v-if="ascending">↑</i>
+          <i v-else>↓</i>
+        </button>
+      </div>
     </div>
     <p v-if="$fetchState.pending">Loading....</p>
     <p v-else-if="$fetchState.error">Error while fetching cars.</p>
@@ -111,12 +90,6 @@ export default {
       searchValue: '',
       sortBy: 'max_price',
       ascending: true,
-      // count: 0,
-      // properties: {
-      //   max_price: 0,
-      //   min_price: 0,
-      //   max_km: 0,
-      // },
     }
   },
   async fetch() {
@@ -130,7 +103,6 @@ export default {
     filteredCars() {
       let carName = this.cars.cars
 
-      // search name
       if (this.searchValue !== '' && this.searchValue) {
         carName = carName.filter((item) => {
           return item.name
@@ -139,47 +111,22 @@ export default {
         })
       }
 
-      // search max_price
-      if (this.max_price)
-        carName = carName.filter((item) => {
-          return item.price <= this.max_price
-        })
-
-      // search min_price
-      if (this.min_price)
-        carName = carName.filter((item) => {
-          return item.price <= this.min_price
-        })
-
-      // search max_km
-      if (this.max_km)
-        carName = carName.filter((item) => {
-          return item.km <= this.max_km
-        })
-
-      // Sort by alphabetical order
-      carName = carName.sort((a, b) => {
+      carName = carName.sort((max, min) => {
         if (this.sortBy === 'max_price') {
-          const fa = a.name.toLowerCase()
-          const fb = b.name.toLowerCase()
+          const priceMax = max.price
+          const priceMin = min.price
 
-          if (fa < fb) {
-            return -1
-          }
-          if (fa > fb) {
-            return 1
-          }
-          return 0
-
-          // Sort by cooking time
+          return priceMin - priceMax
         } else if (this.sortBy === 'max_km') {
-          return a.max_km - b.max_km
+          const kmMax = max.km
+          const kmMin = min.km
+
+          return kmMin - kmMax
         }
 
         return carName
       })
 
-      // Show sorted array in descending or ascending order
       if (!this.ascending) {
         carName.reverse()
       }
@@ -187,12 +134,6 @@ export default {
       return carName
     },
   },
-  // mounted() {
-  //   this.$notifier.showMessage({
-  //     content: 'YAY Our Plugin worked Successfully!',
-  //     color: 'success',
-  //   })
-  // },
   methods: {
     showModal(item) {
       this.isModalVisible = true
@@ -217,6 +158,31 @@ export default {
   align-items: center
   flex-flow: column
   padding: 50px 0
+
+.buscar-wrapper .filtros
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  flex-flow: column
+  width: 100%
+  margin: 0 auto
+  max-width: 900px
+  padding: 20px 40px
+
+.buscar-wrapper .filtros-wrapper
+  padding-top: 10px
+
+.buscar-wrapper .filtros-wrapper input
+  border: 1px solid main.$color-lightGray
+  padding: 10px
+
+.buscar-wrapper .filtros-wrapper select
+  border: 1px solid main.$color-lightGray
+  padding: 9px
+
+.buscar-wrapper .filtros-wrapper button
+  border: 1px solid main.$color-lightGray
+  padding: 10px
 
 .buscar-wrapper .card-wrapper
   display: flex
@@ -290,4 +256,27 @@ export default {
   &:hover
     background-color: rgba(0,0,0, 0.2)
     cursor: pointer
+
+@media (max-width: 768px)
+  .buscar-wrapper .filtros
+    justify-content: center
+    align-items: center
+    flex-flow: column
+
+  .buscar-wrapper .filtros-wrapper
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    flex-flow: column
+
+  .buscar-wrapper .filtros-wrapper input
+    width: 100%
+    margin-bottom: 10px
+
+  .buscar-wrapper .filtros-wrapper select
+    width: 100%
+    margin-bottom: 10px
+
+  .buscar-wrapper .filtros-wrapper button
+    width: 100%
 </style>
