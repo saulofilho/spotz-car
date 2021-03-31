@@ -26,12 +26,6 @@
   </main>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({})
-</script>
-
 <style lang="sass">
 main
   margin: 0 auto

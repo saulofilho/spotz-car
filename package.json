@@ -15,6 +15,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/toast": "^3.3.1",
     "@nuxtjs/vercel-builder": "^0.21.2",
+    "@vue/composition-api": "^1.0.0-rc.6",
     "core-js": "^3.9.1",
     "v-mask": "^2.2.4",
     "vue-slick-carousel": "^1.0.6"

@@ -43,12 +43,28 @@
   </form>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+
+export default defineComponent({
   name: 'Form',
-  props: ['carId'],
+  props: {
+    carId: {
+      type: String,
+      default: '',
+      required: true,
+    },
+  },
   data() {
-    return {
+    const data: {
+      errors: string[]
+      contact: {
+        name: string
+        cpf: string
+        email: string
+        phone: string
+      }
+    } = {
       errors: [],
       contact: {
         name: '',
@@ -57,14 +73,15 @@ export default {
         phone: '',
       },
     }
+    return data
   },
   computed: {
-    announcement_id() {
+    announcement_id(): string {
       return this.carId.id
     },
   },
   methods: {
-    checkForm(e) {
+    checkForm(e: any) {
       if (
         this.announcement_id &&
         this.contact.name &&
@@ -98,7 +115,7 @@ export default {
       e.preventDefault()
     },
   },
-}
+})
 </script>
 
 <style lang="sass">

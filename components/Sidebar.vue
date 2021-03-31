@@ -13,19 +13,20 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import { store, mutations } from '~/store/menuburger.js'
 
-export default {
+export default Vue.extend({
   computed: {
-    isPanelOpen() {
+    isPanelOpen(): boolean {
       return store.isNavOpen
     },
   },
   methods: {
     closeSidebarPanel: mutations.toggleNav,
   },
-}
+})
 </script>
 
 <style lang="sass">

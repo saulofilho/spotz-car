@@ -78,12 +78,20 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App',
-  props: ['carId'],
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+
+export default defineComponent({
+  name: 'Buscar',
   data() {
-    return {
+    const data: {
+      cars: string[]
+      isModalVisible: boolean
+      selectedCar: string
+      searchValue: string
+      sortBy: string
+      ascending: boolean
+    } = {
       cars: [],
       isModalVisible: false,
       selectedCar: '',
@@ -91,6 +99,7 @@ export default {
       sortBy: 'max_price',
       ascending: true,
     }
+    return data
   },
   async fetch() {
     this.cars = await fetch(
@@ -100,32 +109,37 @@ export default {
       .catch((err) => err.message)
   },
   computed: {
-    filteredCars() {
+    filteredCars(): string[] {
       let carName = this.cars.cars
 
       if (this.searchValue !== '' && this.searchValue) {
-        carName = carName.filter((item) => {
+        carName = carName.filter((item: any) => {
           return item.name
             .toUpperCase()
             .includes(this.searchValue.toUpperCase())
         })
       }
 
-      carName = carName.sort((max, min) => {
-        if (this.sortBy === 'max_price') {
-          const priceMax = max.price
-          const priceMin = min.price
+      carName = carName.sort(
+        (
+          max: { price: number; km: number },
+          min: { price: number; km: number }
+        ) => {
+          if (this.sortBy === 'max_price') {
+            const priceMax = max.price
+            const priceMin = min.price
 
-          return priceMin - priceMax
-        } else if (this.sortBy === 'max_km') {
-          const kmMax = max.km
-          const kmMin = min.km
+            return priceMin - priceMax
+          } else if (this.sortBy === 'max_km') {
+            const kmMax = max.km
+            const kmMin = min.km
 
-          return kmMin - kmMax
+            return kmMin - kmMax
+          }
+
+          return carName
         }
-
-        return carName
-      })
+      )
 
       if (!this.ascending) {
         carName.reverse()
@@ -135,15 +149,15 @@ export default {
     },
   },
   methods: {
-    showModal(item) {
+    showModal(item: string) {
       this.isModalVisible = true
       this.selectedCar = item
     },
-    closeModal() {
+    closeModal(): void {
       this.isModalVisible = false
     },
   },
-}
+})
 </script>
 
 <style lang="sass">

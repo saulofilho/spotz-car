@@ -10,21 +10,23 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+
 import { store, mutations } from '~/store/menuburger.js'
 
-export default {
+export default Vue.extend({
   computed: {
-    isBurgerActive() {
+    isBurgerActive(): boolean {
       return store.isNavOpen
     },
   },
   methods: {
-    toggle() {
+    toggle(): void {
       mutations.toggleNav()
     },
   },
-}
+})
 </script>
 
 <style lang="sass">

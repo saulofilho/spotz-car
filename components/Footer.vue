@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="border-section container"></div>
+    <div class="border-section"></div>
     <div class="footer-wrapper container">
       <div class="logo-wrapper">
         <img src="../assets/images/logo.png" alt="logo of spotz car" />
@@ -39,9 +39,9 @@ footer
 
 footer .border-section
   border-top: 2px solid main.$color-purple
-  width: 80%
+  max-width: 900px
+  padding: 20px 40px
   margin: 0 auto
-  padding: 20px 0
   opacity: 0.4
 
 footer .footer-wrapper

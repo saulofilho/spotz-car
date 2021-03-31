@@ -17,16 +17,24 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'Modal',
-  props: ['carId'],
+  props: {
+    carId: {
+      type: String,
+      default: '',
+      required: true,
+    },
+  },
   methods: {
-    close() {
+    close(): any {
       this.$emit('close')
     },
   },
-}
+})
 </script>
 
 <style lang="sass">
