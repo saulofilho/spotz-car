@@ -3,7 +3,6 @@
     <Header />
     <Nuxt />
     <Footer />
-    <Snackbar />
   </div>
 </template>
 
