@@ -132,7 +132,7 @@
   width: 80px
   height: 80px
   object-fit: cover
-  border: 2px solid main.$color-lightGray
+  border: 2px solid main.$color-purple
 
 .sobre-wrapper .text-sobre
   font-weight: normal
