@@ -16,6 +16,7 @@ import Vue from 'vue'
 import { store, mutations } from '~/store/menuburger.js'
 
 export default Vue.extend({
+  name: 'Menuburger',
   computed: {
     isBurgerActive(): boolean {
       return store.isNavOpen

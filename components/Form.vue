@@ -50,8 +50,8 @@ export default defineComponent({
   name: 'Form',
   props: {
     carId: {
-      type: String,
-      default: '',
+      type: Object,
+      default: () => {},
       required: true,
     },
   },
@@ -81,7 +81,7 @@ export default defineComponent({
     },
   },
   methods: {
-    checkForm(e: any) {
+    checkForm(this: any, e: any) {
       if (
         this.announcement_id &&
         this.contact.name &&

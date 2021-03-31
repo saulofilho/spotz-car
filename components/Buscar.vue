@@ -85,7 +85,7 @@ export default defineComponent({
   name: 'Buscar',
   data() {
     const data: {
-      cars: string[]
+      cars: object[]
       isModalVisible: boolean
       selectedCar: string
       searchValue: string
@@ -109,7 +109,7 @@ export default defineComponent({
       .catch((err) => err.message)
   },
   computed: {
-    filteredCars(): string[] {
+    filteredCars(this: any) {
       let carName = this.cars.cars
 
       if (this.searchValue !== '' && this.searchValue) {
