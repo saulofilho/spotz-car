@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import Header from '@/components/Header.vue'
+import Carousel from '@/components/Carousel.vue'
 
-describe('Header', () => {
+describe('Carousel', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Header)
+    const wrapper = mount(Carousel)
     expect(wrapper.element).toBeTruthy()
   })
 })

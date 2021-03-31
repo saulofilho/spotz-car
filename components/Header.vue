@@ -18,7 +18,7 @@
         </ul>
       </nav>
       <div class="menu-wrapper">
-        <Menuburger></Menuburger>
+        <Menuburger />
       </div>
     </div>
   </header>
@@ -26,8 +26,13 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import Menuburger from './Menuburger.vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: {
+    Menuburger,
+  },
+})
 </script>
 
 <style lang="sass">

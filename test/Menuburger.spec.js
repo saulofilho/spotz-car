@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import Header from '@/components/Header.vue'
+import Menuburger from '@/components/Menuburger.vue'
 
-describe('Header', () => {
+describe('Menuburger', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Header)
+    const wrapper = mount(Menuburger)
     expect(wrapper.element).toBeTruthy()
   })
 })

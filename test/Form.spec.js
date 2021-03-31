@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import Header from '@/components/Header.vue'
+import Form from '@/components/Form.vue'
 
-describe('Header', () => {
+describe('Form', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Header)
+    const wrapper = mount(Form)
     expect(wrapper.element).toBeTruthy()
   })
 })

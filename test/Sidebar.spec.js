@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import Header from '@/components/Header.vue'
+import Sidebar from '@/components/Sidebar.vue'
 
-describe('Header', () => {
+describe('Sidebar', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Header)
+    const wrapper = mount(Sidebar)
     expect(wrapper.element).toBeTruthy()
   })
 })

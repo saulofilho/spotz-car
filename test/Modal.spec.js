@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import Header from '@/components/Header.vue'
+import Modal from '@/components/Modal.vue'
 
-describe('Header', () => {
+describe('Modal', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Header)
+    const wrapper = mount(Modal)
     expect(wrapper.element).toBeTruthy()
   })
 })

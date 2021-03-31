@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import Header from '@/components/Header.vue'
+import Sobre from '@/components/Sobre.vue'
 
-describe('Header', () => {
+describe('Sobre', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(Header)
+    const wrapper = mount(Sobre)
     expect(wrapper.element).toBeTruthy()
   })
 })
