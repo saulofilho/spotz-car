@@ -41,7 +41,7 @@
     "nuxt": "^2.15.3",
     "prettier": "^2.2.1",
     "sass": "^1.32.8",
-    "sass-loader": "10",
+    "sass-loader": "13",
     "ts-jest": "^26.5.4",
     "vue-jest": "^3.0.4"
   }
